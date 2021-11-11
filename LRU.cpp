@@ -5,7 +5,6 @@ using namespace std;
 
 
 int main() {
-	
 	int s, n;
 	int arr[1001];
 	int cache[11] = { 0, };

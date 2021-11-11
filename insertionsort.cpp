@@ -5,6 +5,7 @@ using namespace std;
 
 
 int main() {
+	
 	int t,j;
 	cin >> t;
 	int arr[101];
