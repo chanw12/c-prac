@@ -3,52 +3,39 @@
 #include<algorithm>
 using namespace std;
 
-
+int a[2001];
 int main() {
-	int n;
-	cin >> n;
-	vector <int> v(n + 1);
-	for (int i = 1; i <= n; i++) { cin >> v[i]; }
-	int k;
-	cin >> k;
-	int i = 1;
-	int rst;
-	int count = 0;
-	for (int t = 1; t <= k+1; t++,i++)
-	{
-		if (v[i] != 0)
-		{
-			if (t == k + 1)
-			{
-				rst = i;
-				break;
-			}
-			v[i]--;
-			if (v[i] == 0)
-			{
-				count++;
-			}
-		}
-		else
-		{
-			t--;
-		}
-		
-		if (i + 1 > n)
-			i = 0;
-		if (count == n)
-		{
+	int n, k, i, p = 0, cnt = 0, tot = 0;
 
-		}
-
-
+	for (i = 1; i < n; i++) { 
+		cin >> a[i];
+		tot += a[i];
 	}
-	sort(v.begin(), v.end());
-	if (v[n] == 0)
-		rst = -1;
+	cin >> k;
+	if (k >= tot)
+	{
+		cout << -1 << endl;
+		return 0;
+	}
+	while (1)
+	{
+		p++;
+		if (p > n)p = 1;
+		if (a[p] == 0) continue;
+		a[p]--;
+		cnt++;
+		if (cnt == k) break;
+	}
+	while (1)
+	{
+		p++;
+		if (p > n)p = 1;
+		if (a[p] != 0) break;
+	}
+	cout << p << endl;
 
-	cout << rst << endl;
 
 	return 0;
 }
+
 
