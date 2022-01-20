@@ -9,7 +9,7 @@ using namespace std;
 vector<pair<int, int> > v[10001];
 int visited[10001];
 int maxWeight = 0;
-void bfs(int start)
+void dfs(int start)
 {
 
     stack<int> s;
