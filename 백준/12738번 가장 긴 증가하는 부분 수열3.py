@@ -8,12 +8,15 @@ for l in ll:
     else:
         left = 0
         right = len(temp)-1
-
-        while left < right:
-            mid = (left+ right )//2
+        while left< right:
+            mid = (left+right)//2
             if temp[mid] < l:
-                left= mid + 1
+                left = mid+1
             else:
                 right = mid
         temp[right] = l
+
+
 print(len(temp)-1)
+
+
